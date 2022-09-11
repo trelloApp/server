@@ -71,6 +71,9 @@ const resolver = {
       await dbMethors.updateEmployee(({ id, ...data } = args)),
     deleteEmployee: async (parent, args, { dbMethors }) =>
       await dbMethors.deleteEmployee(args.id),
+    //Droppable
+    updateDroppable: async (parent, args, { dbMethors }) =>
+      dbMethors.updateDroppable(args),
   },
 };
 module.exports = resolver;

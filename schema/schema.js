@@ -33,6 +33,7 @@ const typeDefs = gql`
   type Todo {
     id: ID!
     todo: String!
+    content: String
     createdAt: String
     updatedAt: String
     authorId: Author
@@ -59,6 +60,12 @@ const typeDefs = gql`
     listTodos: [Todo]
     createdAt: String
     updatedAt: String
+  }
+  type Droppable {
+    id: ID!
+    currentListId: String
+    listId: String
+    index: Int
   }
   #ROOT TYPE
 
@@ -88,6 +95,7 @@ const typeDefs = gql`
     createTodo(
       listID: String
       todo: String!
+      content: String
       createdAt: String
       update_at: String
       authorID: ID
@@ -118,6 +126,7 @@ const typeDefs = gql`
     updateTodo(
       id: ID!
       todo: String
+      content: String
       createdAt: String
       updatedAt: String
       authorId: String
@@ -142,6 +151,12 @@ const typeDefs = gql`
       update_at: String
       status: Int
     ): Employee
+    updateDroppable(
+      id: ID!
+      currentListId: String
+      listId: String
+      index: Int
+    ): Droppable
     deleteTodo(id: ID!, listId: ID!): Todo
     deleteListTodo(id: ID!): ListTodo
     deleteAuthor(id: ID!): Author

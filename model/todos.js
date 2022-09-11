@@ -6,6 +6,10 @@ const todosSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    content: {
+      type: String,
+      default: "",
+    },
     authorId: {
       type: String,
     },

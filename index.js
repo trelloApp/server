@@ -15,10 +15,10 @@ app.use(cors());
 //load methorDb
 const dbMethors = require("./db/methorDb");
 //conect mongoodb
-console.log(process.env.MONGO_URL);
+console.log(process.env.MONGOOSE_URL);
 const conect = async () => {
   try {
-    await mongoose.connect(process.env.MONGOOSE_URL, {
+    await mongoose.connect(`${process.env.MONGOOSE_URL}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
