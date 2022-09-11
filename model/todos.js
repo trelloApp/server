@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { schemaOptions } = require("./modeloption");
+console.log('schemaOptions',schemaOptions)
 const todosSchema = new mongoose.Schema(
   {
     todo: {
